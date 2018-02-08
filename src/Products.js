@@ -20,23 +20,27 @@ class Products extends Component {
                 <h1>Products List</h1>
                 <div>
                     <ul>
-
-                    {this.props.products.map((product) =>(
-                        <li key={product.id}><div>
-                            <h3>{product.productName}</h3>
-                            <h4>{product.price}</h4>
-                            <img className="productImage" id={product.id} alt="Picture not found" src={product.imageUrl} />
-                            <div>
-                                <button><Link to={`/products/edit/${product.id}`}>Edit</Link></button>
-                                <button type="submit" >Delete</button>
+                        {this.props.products.map((product) => (
+                            <div key={product.id}>
+                                <div class="small-3 columns">
+                                    <div class="card">&lt;router-outlet&gt;&lt;/router-outlet&gt;
+                                        <div class="card">
+                                            <h3>{product.productName}</h3>
+                                            <h4>{product.price}</h4>
+                                            <img className="productImage" id={product.id} alt="Picture not found" src={product.imageUrl} />
+                                            <div>
+                                                <button><Link to={`/products/edit/${product.id}`}>Edit</Link></button>
+                                                <button type="submit" >Delete</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="small-9 columns"></div>
                             </div>
-                        </div>
-                        </li>
-                    ))}
+                        ))}
                     </ul>
                 </div>
             </div>
-            
         )
     }
 }
