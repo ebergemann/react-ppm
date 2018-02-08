@@ -1,4 +1,17 @@
 .App {
-  text-align: center;
+  text-align: left;
 }
 
+.NavLinks {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+}
+ #title {
+   padding-bottom: 50px;
+ }
+
+ .productImage {
+   height: 150px;
+   width: 150px;
+ }
