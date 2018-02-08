@@ -19,6 +19,15 @@ export const fetchProducts = () => {
         })
     }
 }
+export const editProduct = (editObj) => {
+    console.log("Inside editProdut from Actions")
+    return (dispatch, getState, url) => {
+        axios.put(`${url}products`, editObj)
+        .then(({data}) => {
+            dispatch(fetchProducts());
+        }   
+    )}
+}
 
 const loadProducts = payload => {
     return {

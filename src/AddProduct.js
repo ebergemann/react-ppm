@@ -30,7 +30,7 @@ handleSubmit(e){
         title: '',
         price: '',
         imageURL: '',
-    }, this.context.router.transitionTo('/products'))
+    })
 
 
 }
