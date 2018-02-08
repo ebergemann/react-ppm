@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { fetchProducts } from './state/actions'
+import './ui-toolkit/css/nm-cx/main.css'
+import './App.css';
 
 class Products extends Component {
     componentDidMount() {
