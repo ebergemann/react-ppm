@@ -30,7 +30,7 @@ class EditProduct extends Component {
 
   componentWillMount() {
     const product = this.props.products.find(({ id }) => id === this.props.match.params.id)
-    this.setState({ productName: product.productName, price: product.price, imageUrl: product.imageUrl, id:product.id})
+    this.setState({ productName: product.productName, price: product.price, imageUrl: product.imageUrl, id: product.id })
   }
 
   handleInputChange(e) {
@@ -59,14 +59,28 @@ class EditProduct extends Component {
     return (
       <div>
         <h1>Edit Product</h1>
-        <form onSubmit={ this.handleSubmit.bind(this) }>
-          <label for="productName">Title </label>
-          <input name="productName" value={this.state.productName} onChange={this.handleInputChange} id="productName" type='text' />
-          <label for="productPrice">Price </label>
-          <input name="price" value={this.state.price} onChange={this.handleInputChange} id="productPrice" type='text' />
-          <label for="imgURL">Image URL </label>
-          <input name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} id="imgURL" type='text' />
-          <button type="submit" onClick={this.handleSubmit.bind(this)}> Save </button>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <div className="card">
+            {/* <div className="small-7 columns">&nbsp;</div> */}
+            <div className="row">
+              <label for="productName">Title </label>
+              <input className=" small-4 columns" name="productName " value={this.state.productName} onChange={this.handleInputChange} id="productName" type='text' />
+              <div className="small-8 columns">&nbsp;</div>
+            </div>
+            <div className="row">
+              <label for="productPrice">Price </label>
+              <input className=" small-4 columns" name="price" value={this.state.price} onChange={this.handleInputChange} id="productPrice" type='text' />
+              <div className="small-8 columns">&nbsp;</div>
+            </div>
+            <div className="row">
+              <label for="imgURL">Image URL </label>
+              <input className=" small-4 columns" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} id="imgURL" type='text' />
+              <div className="small-8 columns">&nbsp;</div>
+            </div>
+            <button type="submit" onClick={this.handleSubmit.bind(this)}> Save </button>
+          
+          </div>
+          {/* <div className="small-7 columns">&nbsp;</div> */}
         </form>
       </div>
     )
