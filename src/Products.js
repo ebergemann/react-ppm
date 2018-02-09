@@ -33,8 +33,8 @@ class Products extends Component {
                                             <h4>${product.price}</h4>
                                             <img className="productImage" id={product.id} alt="Picture not found" src={product.imageUrl} />
                                             <div>
-                                                <button><Link to={`/products/edit/${product.id}`}>Edit</Link></button>
-                                                <button id={product.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
+                                                <button className="productsbtn" ><Link to={`/products/edit/${product.id}`}>Edit</Link></button>
+                                                <button className="productsbtn" id={product.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
                                             </div>
                                         </div>
                                     </div>

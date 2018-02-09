@@ -78,8 +78,8 @@ class EditProduct extends Component {
               <input className=" small-4 columns" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} id="imgURL" type='text' />
               <div className="small-8 columns">&nbsp;</div>
             </div>
-            <button id={this.state.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
-            <button type="submit" onClick={this.handleSubmit.bind(this)}> Save </button>
+            <button className="productsbtn" id={this.state.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
+            <button className="productsbtn" type="submit" onClick={this.handleSubmit.bind(this)}> Save </button>
             
           
           </div>
