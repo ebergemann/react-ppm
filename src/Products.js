@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchProducts } from './state/actions'
+import {connect} from 'react-redux';
+import { fetchProducts, deleteProduct } from './state/actions'
 import './ui-toolkit/css/nm-cx/main.css'
 // import './App.css';
 import {
@@ -14,8 +14,8 @@ class Products extends Component {
     this.props.fetchProducts();
   }
 
-  render() {
     return (
+  render() {
       <div>
         <h1>Products List</h1>
         <div>
@@ -26,14 +26,16 @@ class Products extends Component {
                   <div class="card">&lt;router-outlet&gt;&lt;/router-outlet&gt;
                     <div class="card">
                       <h3>{product.productName}</h3>
-                      <h4>&#36;{product.price}</h4>
                       <img className="productImage" id={product.id} alt="Picture not found" src={product.imageUrl} />
                       <div>
-                        <button id="productsbtn" ><Link to={`/products/edit/${product.id}`}>&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</Link></button>
-                        <button id="productsbtn" type="submit" >Delete</button>
                       </div>
                     </div>
                   </div>
+                      <h4>&#36;{product.price}</h4>
+        console.log(this.props)
+                        <button id="productsbtn" ><Link to={`/products/edit/${product.id}`}>&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</Link></button>
+                                                <button><Link to={`/products/edit/${product.id}`}>Edit</Link></button>
+                                                <button id={product.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
                 </div>
                 <div class="small-9 columns"></div>
               </div>
@@ -51,10 +53,11 @@ const mapStateToProps = ({ products }) => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchProducts: () => dispatch(fetchProducts())
-  }
+const mapDispatchToProps = dispatch =>{
+        deleteProduct: (e) => dispatch(deleteProduct(e.target.id))
+        fetchProducts: () => dispatch(fetchProducts()),
+    return{
+    }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);

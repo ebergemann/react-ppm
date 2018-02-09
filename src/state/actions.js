@@ -28,6 +28,16 @@ export const editProduct = (editObj) => {
         }   
     )}
 }
+export const deleteProduct = (id) => {
+    console.log(id +"delete Product from Actions")
+    return (dispatch, getState, url) => {
+        axios.delete(`${url}products/${id}`)
+        .then(({data}) => {
+            console.log("hello from delete")
+            dispatch(fetchProducts());
+        }   
+    )}
+}
 
 const loadProducts = payload => {
     return {
