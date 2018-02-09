@@ -48,7 +48,7 @@ handleInputChange(e){
                     <label for="productName">Title </label>
                         <input name="title" value={this.state.title} onChange={this.handleInputChange} id="productName" type='text'  />
                     <label for="productPrice">Price </label>
-                        <input name="price" value={this.state.price} onChange={this.handleInputChange} id="productPrice" type='text'  />
+                        <input name="price" type="number" min="0" value={this.state.price} onChange={this.handleInputChange} id="productPrice"  />
                     <label for="imgURL">Image URL </label>
                         <input name="imageURL" value={this.state.imageURL} onChange={this.handleInputChange} id="imgURL" type='text' />
                     <button className="productsbtn" type="submit"> Create </button>
