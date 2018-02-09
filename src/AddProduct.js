@@ -32,6 +32,7 @@ handleSubmit(e){
         imageURL: '',
     })
 
+    this.props.history.push('/products')
 
 }
 

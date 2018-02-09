@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ui-toolkit/css/nm-cx/main.css'
 import './App.css';
 import { connect } from 'react-redux';
-import { editProduct } from './state/actions';
+import { editProduct, deleteProduct } from './state/actions';
 
 class ProductItem {
   constructor(productName, price, imageUrl, id) {
@@ -49,7 +49,8 @@ class EditProduct extends Component {
       imageUrl: '',
       id: ''
     })
-
+    
+    this.props.history.push("/products")
   }
 
   render() {
@@ -77,7 +78,9 @@ class EditProduct extends Component {
               <input className=" small-4 columns" name="imageUrl" value={this.state.imageUrl} onChange={this.handleInputChange} id="imgURL" type='text' />
               <div className="small-8 columns">&nbsp;</div>
             </div>
+            <button id={this.state.id} name='delete' onClick={this.props.deleteProduct}  >Delete</button>
             <button type="submit" onClick={this.handleSubmit.bind(this)}> Save </button>
+            
           
           </div>
           {/* <div className="small-7 columns">&nbsp;</div> */}
@@ -98,7 +101,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    editProduct: (productObj) => dispatch(editProduct(productObj))
+    editProduct: (productObj) => dispatch(editProduct(productObj)),
+    deleteProduct: (e) => dispatch(deleteProduct(e.target.id))
   }
 }
 
