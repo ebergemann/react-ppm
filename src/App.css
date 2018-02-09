@@ -15,3 +15,11 @@
    height: 150px;
    width: 150px;
  }
+ #productsbtn {
+  height: 25px;
+  width: 240px;
+  line-height: 5px;
+  text-align: center;
+  vertical-align: middle;
+  color: white;
+ }
