@@ -64,7 +64,7 @@ class EditProduct extends Component {
             {/* <div className="small-7 columns">&nbsp;</div> */}
             <div className="row">
               <label for="productName">Title </label>
-              <input className=" small-4 columns" name="productName " value={this.state.productName} onChange={this.handleInputChange} id="productName" type='text' />
+              <input className=" small-4 columns" name="productName" value={this.state.productName} onChange={this.handleInputChange} id="productName" type='text' />
               <div className="small-8 columns">&nbsp;</div>
             </div>
             <div className="row">
